@@ -1,9 +1,0 @@
-== README
-
-Dependencies
-
-* rvm
-
-* ruby 2.1.1
-
-* ImageMagick
