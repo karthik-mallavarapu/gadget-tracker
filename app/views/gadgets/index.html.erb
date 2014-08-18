@@ -1,15 +1,17 @@
-<div class="container">
-  
+<div class="container main-area">  
   <div class="row">
     <div class="col-md-9">
-      <%= render "coverflow" %>
-      <%= render "gadget_list" %>
+      <% if @latest.size == 0 %>
+        <h2>No gadgets</h2>
+      <% else %>
+        <%= render "coverflow" %>
+        <%= render "gadget_list" %>
+      <% end %>
     </div>
     <div class="col-md-3">
-      <%= link_to new_user_gadget_path do %>
+      <%= link_to new_user_gadget_path, class: "btn btn-lg" do %>
         <i class ='glyphicon glyphicon-plus-sign'></i> Gadget
       <% end %>
     </div>
-  </div>
-  
+  </div>  
 </div>

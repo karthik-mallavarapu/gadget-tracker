@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :gadgets
   end
+
+  get 'search' => 'search#index', as: :search
   
 end

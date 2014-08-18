@@ -14,13 +14,27 @@
  *= require_tree .
  */
  @import "bootstrap-sprockets";
-  @import "bootstrap";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:300);
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:700);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+
+body {
+  background-color: #F7F7F7;
+  font-family: 'Merriweather Sans', sans-serif;
+}
 
  .alert {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
  }
+
+.main-area {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 
 #gadget_list {
   

@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+# Based on https://gist.github.com/roberto/3344628
+
   def bootstrap_class_for(flash_type)
     case flash_type
       when "success"
