@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe User, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe User do 
+  
+  it "validates uniqueness of email" do 
+    user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.build(:user)
+    expect(user2).not_to be_valid
+  end
+
 end

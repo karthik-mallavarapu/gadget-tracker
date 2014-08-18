@@ -1,7 +1,7 @@
 class GadgetsController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :find_gadget, only: [:show, :edit, :destroy]
+  before_filter :find_gadget, only: [:show]
 
   def index
     @gadgets = current_user.gadgets
@@ -27,18 +27,6 @@ class GadgetsController < ApplicationController
       flash[:alert] = "Gadget has not been added."
       render action: "new"
     end
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
   end
 
   private

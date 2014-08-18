@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :gadget do
+    name "Gadget1"
+    description "Gadget description"
   end
 end
