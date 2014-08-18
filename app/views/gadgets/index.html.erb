@@ -6,7 +6,9 @@
       <%= render "gadget_list" %>
     </div>
     <div class="col-md-3">
-      <%= link_to "Add new Gadget", new_user_gadget_path %>
+      <%= link_to new_user_gadget_path do %>
+        <i class ='glyphicon glyphicon-plus-sign'></i> Gadget
+      <% end %>
     </div>
   </div>
   

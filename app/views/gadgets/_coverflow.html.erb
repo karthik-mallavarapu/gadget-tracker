@@ -1,1 +1,28 @@
 <h2>Latest Gadgets</h2>
+<div id="gadget_carousel" class="carousel slide"><!-- class of slide for animation -->    
+    <div class="carousel-inner">
+      <% @latest.each_index do |i| %>
+        <div class="item<%= i==0? ' active': '' %>"><!-- class of active since it's the first item -->
+          <h3 class="carousel-title"><%= @latest[i].name.titleize%></h3>
+          <%= image_tag @latest[i].images.first.file_url, class: "carousel-img" %>
+          <div class="carousel-text">
+            <p><%= @latest[i].description%></p>
+          </div>
+        </div>
+      <% end %>      
+    </div><!-- /.carousel-inner -->
+    <ol class="carousel-indicators">
+      <% @latest.each_index do |i| %>
+        <li data-target="#gadget_carousel" data-slide-to="<%= i %>" class="<%= i==0? 'active': '' %>"></li>
+      <% end %>
+    </ol>
+    
+    <!--  Next and Previous controls below 
+          href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#gadget_carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#gadget_carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>    
+  </div><!-- /.carousel -->

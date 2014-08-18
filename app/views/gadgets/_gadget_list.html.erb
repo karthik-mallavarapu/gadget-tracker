@@ -2,9 +2,8 @@
   <h2>All Gadgets</h2>
   <% @gadgets.each do |gadget| %>
     <%= div_for gadget do  %>
-      <h4><%= gadget.name.titleize %></h4>
+      <h4><%= link_to gadget.name.titleize, user_gadget_path(current_user, gadget) %></h4>
       <%= image_tag gadget.images.first.file_url(:thumb)%>
-      <p><%= gadget.description %></p>
     <% end %>
   <% end %>
 </div>

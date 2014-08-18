@@ -5,6 +5,7 @@ class GadgetsController < ApplicationController
 
   def index
     @gadgets = current_user.gadgets
+    @latest = current_user.gadgets.last(5)
   end
 
   def show
