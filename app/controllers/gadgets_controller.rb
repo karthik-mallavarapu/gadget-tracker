@@ -4,7 +4,7 @@ class GadgetsController < ApplicationController
   before_filter :find_gadget, only: [:show, :edit, :destroy]
 
   def index
-
+    @gadgets = current_user.gadgets
   end
 
   def show
@@ -17,7 +17,11 @@ class GadgetsController < ApplicationController
 
   def create
     @gadget = current_user.gadgets.build(gadget_params)
+
     if @gadget.save
+      params[:files].each do |file|
+        @gadget.images.create(file: file)
+      end
       redirect_to [current_user, @gadget], flash: {success: "A new Gadget has been added."}
     else
       flash[:alert] = "Gadget has not been added."

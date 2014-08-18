@@ -31,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'high_voltage', '~> 2.2.1'
 gem 'devise'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do 
   gem 'pry'

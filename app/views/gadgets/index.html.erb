@@ -1,4 +1,13 @@
 <div class="container">
-  <h2>My Gadgets</h2>
-  <%= link_to "Add new Gadget", new_user_gadget_path %>
+  
+  <div class="row">
+    <div class="col-md-9">
+      <%= render "coverflow" %>
+      <%= render "gadget_list" %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to "Add new Gadget", new_user_gadget_path %>
+    </div>
+  </div>
+  
 </div>
